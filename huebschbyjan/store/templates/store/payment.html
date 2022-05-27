@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" contents="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Huebsch by Jan Cake Shop</title>
+
+	<!-- Font awesome link-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+	<!-- CSS file link -->
+	<link rel="stylesheet" href="../../../static/css/style.css">
+
+	<!-- Bootstrap CSS link -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body class="d-flex flex-column">
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #dab88b;">
+  <div class="container">
+    <a class="navbar-brand" href="#"><img src="../../../static/images/logo.png" alt="..." height="36"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item active">
+          <a class="nav-link text-uppercase" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-uppercase" href="#">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-uppercase" href="#">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-uppercase" href="#">Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Payment Form -->
+<div class="container mt-5 mb-3">
+  <br><br><br>
+    <div class="row">
+      <!-- Buyer Info -->
+        <div class="col-md-6">
+            <h5 class="mb-3"><i class="fa fa-location-arrow"></i> Delivery Address</h5>
+                <div class="payment-address p-2 d-flex justify-content-between bg-pay align-items-center"> 2/F Unit B3 Karrivin Building B, Pasong Tamo Extension, Makati City, Metro Manila</div>
+            <br>
+            <h5 class="mb-3"><i class="fa fa-phone"></i> Contact Number</h5>
+                <div class="payment-contact p-2 d-flex justify-content-between bg-pay align-items-center"> (032) 231-6718</div>
+            <hr>
+                <div class="d-flex flex-column"> 
+                  <h5 class="mb-3"><i class="fa fa-location-arrow"></i> Payment Method</h5>
+                  <label class="radio"> <input type="radio" hidden name="paymethod" value="gcash" checked>
+                        <div class="d-flex justify-content-between"> G-CASH</div>
+                  </label>
+                  <label class="radio"> <input type="radio" hidden name="paymethod" value="cod">
+                        <div class="d-flex justify-content-between"> CASH ON DELIVERY</div>
+                  </label>
+                </div>
+        </div>
+        <div class="col-md-2"> </div>
+
+        <!-- Order Summary -->
+        <div class="col-md-4">
+            <div class="bg-pay p-3"> 
+              <span class="fw-bold justify-content-between"><i class="fa fa-file-text"></i> Order Summary</span>
+              <br><br>
+                <div class="d-flex justify-content-between mt-2"> <span class="fw-500"> Product 1</span> <span>₱599.00</span> </div>
+                <div class="d-flex justify-content-between mt-2"> <span class="fw-500"> Product 2</span> <span>₱599.00</span> </div>
+                <br>
+                <hr>
+                <div class="d-flex justify-content-between mt-2"> <span class="fw-bold">Subtotal: </span> <span>₱1198.00</span> </div>
+                <div class="d-flex justify-content-between mt-2"> <span class="fw-bold">Delivery Fee: </span> <span>₱60.00</span> </div>
+                <hr>
+                <div class="d-flex justify-content-between mt-2"> <span class="fw-bold">Total </span> <span class="text-success">₱1258.00</span> </div>
+            </div>
+            <br>
+            <div class="buttons"> <button class="btn btn-success btn-block col-md-12">Proceed to payment</button> </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+<!-- Script/s -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
