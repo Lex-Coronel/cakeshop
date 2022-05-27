@@ -1,0 +1,42 @@
+{% extends 'store/navbar-in.html' %} 
+{% load static %}
+{% block content %}
+
+<body class="d-flex flex-column">
+
+<!-- Product section-->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" style="height: 600px" src="../../../static/images/mdcake.png" alt="..." /></div>
+            <div class="col-md-6">
+                <div class="small mb-1 fst-italic">Mother's Day Special</div>
+                <h1 class="display-5 fw-bolder">Red Velvet Cake</h1>
+                <div class="fs-5 mb-5">
+                    <p class="lead">Red velvet cake with cream cheese frosting.</p>
+                    <span class="price">₱330.00</span>
+                </div>
+                <!-- Dedication Form -->
+                <div>
+                  <h6 class="dedication-text">Dedication (Optional):</h6>
+                <div>
+                <form id="dedicationForm">
+                  <div class="form-floating mb-3">
+                    <input class="form-control" id="dedication" type="text" placeholder="Dedication"/>
+                    <label for="dedication">Enter your dedication here</label>
+                  </div>
+                </form>
+                <br>
+                <div class="d-flex">
+                    <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
+                    <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                        <i class="bi-cart-fill me-1"></i>
+                        Add to cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+{% endblock content %}

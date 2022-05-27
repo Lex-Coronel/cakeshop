@@ -1,0 +1,271 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto;
+  font-weight: 300;
+  font-size: 16px;
+  color: #777;
+  line-height: 1.7;
+}
+
+/* Index */
+header {
+  position: relative;
+  background-color: black;
+  height: 75vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+header .container {
+  position: relative;
+  z-index: 2;
+}
+
+header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+header .btn {
+  background-color: #dab88b;
+  border: transparent;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+}
+
+header.button {
+  transition-duration: 0.4s;
+}
+header .btn:hover {
+  background-color: transparent;
+  color: white !important;
+  border: 3px solid whitesmoke !important;
+}
+
+.lead {
+  font-style: italic ;
+}
+
+div.container {
+  size: unset;
+}
+
+.collecthead {
+  color: #bf9270;
+}
+
+div .btn {
+  background-color: #dab88b;
+  border: transparent;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+}
+
+div .btn:hover {
+  background-color: transparent;
+  color: #dab88b;
+  border: 3px solid #dab88b
+}
+
+footer {
+  background-color: #dab88b;
+  height:  auto;
+  width:  auto;
+  padding-top: 40px;
+  color:  #fff;
+}
+
+.footer-content {
+  display:  flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.footer-content h3 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  line height: 3rem;
+}
+
+.footer-content p {
+  max-width: auto;
+  margin: 10px auto;
+  line-height: 28px;
+  font-size: 14px;
+}
+
+.socials {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 40px 0 0;
+}
+
+.socials li {
+  margin: 0 10px;
+}
+
+.socials a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.socials a i {
+  font-size: 1.1rem;
+  transition:  color .4s ease;
+}
+
+.socials a:hover {
+  color: whitesmoke;
+}
+
+.footer-bottom {
+  background: #dab88b;
+  width: auto;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  word-spacing:  2px;
+  text-transform: capitalize;
+}
+
+/* Login Page */
+.login {
+  min-height: 100vh;
+}
+
+.bg-image {
+  background-image: url(../images/login-cupcake.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.login-heading {
+  font-style: italic;
+  font-weight: medium;
+}
+
+.btn-login {
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1rem;
+}
+
+/* Register Page */
+.register {
+  min-height: 100vh;
+}
+
+.register-heading {
+  font-style: italic;
+  font-weight: medium;
+}
+
+#registerpage {
+  background-image: url(../images/register-cupcake.jpg);
+  background-size: cover
+}
+
+/* Payment Page */
+.cancel {
+  text-decoration: none
+}
+
+.bg-pay {
+  background-color: #eee;
+  border-radius: 2px
+}
+
+.com-color {
+  color: #8f37aa!important
+}
+
+.radio{
+  cursor: pointer
+}
+
+label .radio input {
+  position: absolute;top: 0;left: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+label.radio div {
+  padding: 7px 14px;border: 2px solid #dab88b;
+  display: inline-block;
+  color: #dab88b;
+  border-radius: 3px;text-transform: uppercase;
+  width: 100%;margin-bottom: 10px
+}
+
+label.radio input:checked+div {
+  border-color: #dab88b;
+  background-color: #dab88b;
+  color: #fff
+}
+
+.fw-500 {
+  font-weight: 400
+}
+
+.lh-16 {
+  line-height: 16px
+}
+
+.buttons {
+  justify-content: flex-end;
+}
+
+/* Contact Us Form */
+#contactuspage {
+  background-image: url(../images/register-cupcake.jpg);
+  background-size: cover
+}
+
+button:disabled
+button[disabled] {
+  border-color: #eee !important;
+  background-color: #eee !important;
+  color: black;
+}

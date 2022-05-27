@@ -1,0 +1,86 @@
+{% extends 'store/navbar.html' %} 
+{% load static %}
+{% block content %}
+<!-- Video BG and Header -->
+<header>
+  <div class="overlay"></div>
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+    <source src="../../../static/images/huebschvid.mp4" type="video/mp4">
+  </video>
+
+  <!-- Header content -->
+  <div class="container h-100">
+    <div class="d-flex h-100 text-center align-items-center">
+      <div class="w-100 text-white">
+        <p class="lead mb-0" style="font-size: xx-large;">Satisfy your tastebuds, delight your eyes and express your feelings through our custom-made cakes.</p><br>
+        <a class="btn text-uppercase" href="#">Shop Now</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Collection Images -->
+<div class="collectcontainer text-center py-5 mb-4">
+	<h1 class="collecthead fw-light text-uppercase">Our Collection</h1>
+</div>
+<div class="container">
+  <div class="row">
+    <!-- Cake 1 -->
+    <div class="col-xl-4 col-md-4 mb-4">
+      <div class="card border-0 shadow">
+        <img src="../../../static/images/cake1.jpg" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title mb-0">Bento Cakes</h5>
+          <div class="card-text text-black-50">A petite-sized dessert which is not only pretty and cute but is also an absolute treat!</div>
+        </div>
+      </div>
+    </div>
+    <!-- Cake 2 -->
+    <div class="col-xl-4 col-md-4 mb-4">
+      <div class="card border-0 shadow">
+        <img src="../../../static/images/cake2.jpg" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title mb-0">Realistic/ Personalized Cakes</h5>
+          <div class="card-text text-black-50">Exquisitely hand-crafted, premium celebration cakes for any occasion</div>
+        </div>
+      </div>
+    </div>
+    <!-- Cake 3 -->
+    <div class="col-xl-4 col-md-4 mb-4">
+      <div class="card border-0 shadow">
+        <img src="../../../static/images/cake3.jpg" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title mb-0">Cupcakes</h5>
+          <div class="card-text text-black-50">These cupcakes are super moist and bursting with rich and delightful flavor.</div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Custom Order -->
+<div class="customcontainer text-center py-5 mb-4">
+    <div class="d-flex h-100 text-center align-items-center">
+      <div class="w-100 text-white">
+        <p class="customorder mb-0 text-black-50" style="font-size: xx-large;">Want your own custom cake?</p><br>
+        <a class="btn text-uppercase" href="#">Order Now</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+	<div class="footer-content">
+      <h3>Our Socials</h3>
+      <p>Visit our page our contact us through our socials</p>
+      <ul class="socials">
+	    <li><a href='#' target="_blank"><i class="fa fa-facebook"></i></a></li>
+	    <li><a href='#' target="_blank"><i class="fa fa-commenting"></i></a></li>
+	    <li><a href='#' target="_blank"><i class="fa fa-instagram"></i></a></li>
+	   </ul>
+	</div>
+	<div class="footer-bottom">
+		<p>&copy; Copyright 2022. Huebsch by Jan Cake Shop. All rights reserved.<p>
+</footer>
+
+{% endblock content %}

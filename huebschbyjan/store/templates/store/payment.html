@@ -1,0 +1,51 @@
+{% extends 'store/navbar-in.html' %} 
+{% load static %}
+{% block content %}
+
+<body class="d-flex flex-column">
+
+<!-- Payment Form -->
+<div class="container mt-5 mb-3">
+  <br><br><br>
+    <div class="row">
+      <!-- Buyer Info -->
+        <div class="col-md-6">
+            <h5 class="mb-3"><i class="fa fa-location-arrow"></i> Delivery Address</h5>
+                <div class="payment-address p-2 d-flex justify-content-between bg-pay align-items-center"> 2/F Unit B3 Karrivin Building B, Pasong Tamo Extension, Makati City, Metro Manila</div>
+            <br>
+            <h5 class="mb-3"><i class="fa fa-phone"></i> Contact Number</h5>
+                <div class="payment-contact p-2 d-flex justify-content-between bg-pay align-items-center"> (032) 231-6718</div>
+            <hr>
+                <div class="d-flex flex-column"> 
+                  <h5 class="mb-3"><i class="fa fa-location-arrow"></i> Payment Method</h5>
+                  <label class="radio"> <input type="radio" hidden name="paymethod" value="gcash" checked>
+                        <div class="d-flex justify-content-between"> G-CASH</div>
+                  </label>
+                  <label class="radio"> <input type="radio" hidden name="paymethod" value="cod">
+                        <div class="d-flex justify-content-between"> CASH ON DELIVERY</div>
+                  </label>
+                </div>
+        </div>
+        <div class="col-md-2"> </div>
+
+        <!-- Order Summary -->
+        <div class="col-md-4">
+            <div class="bg-pay p-3"> 
+              <span class="fw-bold justify-content-between"><i class="fa fa-file-text"></i> Order Summary</span>
+              <br><br>
+                <div class="d-flex justify-content-between mt-2"> <span class="fw-500"> Product 1</span> <span>₱599.00</span> </div>
+                <div class="d-flex justify-content-between mt-2"> <span class="fw-500"> Product 2</span> <span>₱599.00</span> </div>
+                <br>
+                <hr>
+                <div class="d-flex justify-content-between mt-2"> <span class="fw-bold">Subtotal: </span> <span>₱1198.00</span> </div>
+                <div class="d-flex justify-content-between mt-2"> <span class="fw-bold">Delivery Fee: </span> <span>₱60.00</span> </div>
+                <hr>
+                <div class="d-flex justify-content-between mt-2"> <span class="fw-bold">Total </span> <span class="text-success">₱1258.00</span> </div>
+            </div>
+            <br>
+            <div class="buttons"> <button class="btn btn-success btn-block col-md-12">Proceed to payment</button> </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
