@@ -1,5 +1,6 @@
 from multiprocessing import context
 from django.shortcuts import render
+from .models import *
 
 def home(request):
     context = {}
@@ -30,6 +31,7 @@ def cart(request):
     return render(request,'store/cartpage.html')
 
 def menu(request):
-    context = {}
+    products = Product.objects.all()
+    context = {'products':products}
     return render(request,'store/menupage.html')
 
