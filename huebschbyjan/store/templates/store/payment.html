@@ -11,10 +11,16 @@
       <!-- Buyer Info -->
         <div class="col-md-6">
             <h5 class="mb-3"><i class="fa fa-location-arrow"></i> Delivery Address</h5>
-                <div class="payment-address p-2 d-flex justify-content-between bg-pay align-items-center"> 2/F Unit B3 Karrivin Building B, Pasong Tamo Extension, Makati City, Metro Manila</div>
+                <div class="form-floating mb-3">
+                    <input class="form-control" id="address" type="text" placeholder="Address"/>
+                    <label for="address" style="color: gray">Enter Address Here</label>
+                </div>
             <br>
             <h5 class="mb-3"><i class="fa fa-phone"></i> Contact Number</h5>
-                <div class="payment-contact p-2 d-flex justify-content-between bg-pay align-items-center"> (032) 231-6718</div>
+                <div class="form-floating mb-3">
+                    <input class="form-control" id="contact" type="text" placeholder="Number" required/>
+                    <label for="contact" style="color: gray">Enter Contact Number Here</label>
+                </div>
             <hr>
                 <div class="d-flex flex-column"> 
                   <h5 class="mb-3"><i class="fa fa-location-arrow"></i> Payment Method</h5>

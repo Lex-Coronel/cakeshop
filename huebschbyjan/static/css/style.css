@@ -102,6 +102,12 @@ div .btn:hover {
   border: 3px solid #dab88b
 }
 
+div .btn:focus {
+  background-color: transparent;
+  color: #dab88b;
+  border: 3px solid #dab88b
+}
+
 footer {
   background-color: #dab88b;
   height:  auto;
@@ -268,4 +274,9 @@ button[disabled] {
   border-color: #eee !important;
   background-color: #eee !important;
   color: black;
+}
+
+/* Menu Page */
+.containermenu{
+    margin-top:100px;
 }
