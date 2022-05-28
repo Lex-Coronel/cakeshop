@@ -25,3 +25,11 @@ def contact(request):
     context = {}
     return render(request,'store/contact-us.html')
 
+def cart(request):
+    context = {}
+    return render(request,'store/cartpage.html')
+
+def menu(request):
+    context = {}
+    return render(request,'store/menupage.html')
+
