@@ -2,193 +2,58 @@
 {% load static %}
 {% block content %}
 
-    <body>
-    <!---Hero Section-->
-    <section id="hero">
-            <div class="hero-container">
-            <h1 class="font-weight-bold">Huebsch by Jan Cake Shop - Menu</h1>
-            </div>
+<body class="d-flex flex-column">
 
-    </section>
-    <!---End of Hero Section-->
-    <!--Nav-->
-    <ul class="nav justify-content-center">
-        <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="#">Login</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="#">Register</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link disabled">Menu</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link disabled">Contact Us</a>
-        </li>
-    </ul>
-    
-    <!--End of Nav-->
-
-    <!--Search-->
-    <style>
-        .d-flex
-        {
-            float: left;
-            border: none;
-            margin-top: 8px;
-            margin-left: 200px;
-            padding: 6px;
-            font-size: 17px;
-        }
-
-    </style>
-    <div class="searchbar">
-    <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
+<!-- Search bar -->
+<div class="containermenu col-md-11 col-lg-11">
+  <div class="row">
+    <div class="col-md-8">
     </div>
-    <!--Search-->
+    <div class="col-md-4">
+    <div class="input-group" style="padding-left: 10px">
+      <input type="text" class="form-control input-text" placeholder="Search products">
+      <div class="input-group-append">
+      <button class="btn btn-outline-warning btn-lg" type="button"><i class="fa fa-search"></i></button>
+      </div>
+    </div>  
+  </div>        
+  </div>
+</div>
 
-    <!--Category1 Text-->
-    </div class="Text">
-        <style>
-            h1
-            {
-                font-size: 150%;
-                font-style: bold;
-                margin-top: 70px;
-                margin-left: 300px;
-                padding-left: 100px;
-            }
-            h2
-            {
-                font-size: 100%;
-                font-style: italic;
-                margin-left: 300px;
-                padding-left: 100px;
-            }
-        </style>
+<!-- Menu -->
+<section>
+  <div class="container py-5">
+    <h4 class="mb-2 fw-medium">OUR MENU</h4>
+    <h6 class="description fw-light fst-italic">Check out the wide variety of cakes offered by our shop!</h6>
+    <hr class="mt- 4 mb-4">
 
-        <h1>Category 1</h1>
-        <h2>Lorem Ipsum</h2>
-    </div>
+    <div class="row">
 
-    <!--Category1 Text-->
-
-    <!--Image-add to cart button-->
-    <div class="container">
-        <div class="row">
-            <div class="column">
-                <img src="https://i.pinimg.com/736x/1b/b3/fa/1bb3fa7f80605a004fae81bcb3b9e694.jpg" class="card1" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Product Name</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at ante lacus.</p>
-                    <a href="#" class="btn btn-primary">Add to Cart</a>
-                </div>
-
-            </div>
-
-            <div class="column">
-                <img src="https://i.pinimg.com/736x/1b/b3/fa/1bb3fa7f80605a004fae81bcb3b9e694.jpg" class="card1" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Product Name</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at ante lacus.</p>
-                    <a href="#" class="btn btn-primary">Add to Cart</a>
-                </div>
-
-            </div>
-        
+      <!-- Item Card -->
+      <div class="col-lg-4 col-md-12 mb-4">
+        <div class="card">
+          <div class="bg-image"
+            data-mdb-ripple-color="light">
+            <img src="../../../static/images/menu/Sample-Product.jpg"
+              class="w-100" />
+          </div>
+          <div class="card-body">
+            <a href="#" class="text-reset">
+              <h5 class="card-title mb-3">Product Name</h5>
+            </a>
+            <h6 class="mb-3">₱499.00</h6>
+          </div>
         </div>
-    </div>
+      </div>
+      <!-- Item Card End-->
 
 
-    <div class="container1">
-        <div class="row1">
-            <div class="column1">
-                <img src="https://i.pinimg.com/736x/1b/b3/fa/1bb3fa7f80605a004fae81bcb3b9e694.jpg" class="card2" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Product Name</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at ante lacus.</p>
-                    <a href="#" class="btn btn-primary">Add to Cart</a>
-                </div>
+    <!-- New Items Row
+    <div class="row">
+    -->
 
-            </div>
-                
-        
-        </div>
-    </div>
-    <!--Image-add to cart button-->
+</section>
 
-    <!--Category1 Text-->
-    </div class="Text">
-        <style>
-            h1
-            {
-                font-size: 150%;
-                font-style: bold;
-                margin-top: 70px;
-                margin-left: 300px;
-                padding-left: 100px;
-            }
-            h2
-            {
-                font-size: 100%;
-                font-style: italic;
-                margin-left: 300px;
-                padding-left: 100px;
-            }
-        </style>
-
-        <h1>Category 2</h1>
-        <h2>Lorem Ipsum</h2>
-    </div>
-
-    <!--Category1 Text-->
-    <!--Image-add to cart button-->
-    <div class="container">
-        <div class="row">
-            <div class="column">
-                <img src="https://i.pinimg.com/736x/1b/b3/fa/1bb3fa7f80605a004fae81bcb3b9e694.jpg" class="card1" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Product Name</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at ante lacus.</p>
-                    <a href="#" class="btn btn-primary">Add to Cart</a>
-                </div>
-
-            </div>
-
-            <div class="column">
-                <img src="https://i.pinimg.com/736x/1b/b3/fa/1bb3fa7f80605a004fae81bcb3b9e694.jpg" class="card1" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Product Name</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at ante lacus.</p>
-                    <a href="#" class="btn btn-primary">Add to Cart</a>
-                </div>
-
-            </div>
-        
-        </div>
-    </div>
-
-
-    <div class="container1">
-        <div class="row1">
-            <div class="column1">
-                <img src="https://i.pinimg.com/736x/1b/b3/fa/1bb3fa7f80605a004fae81bcb3b9e694.jpg" class="card2" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Product Name</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at ante lacus.</p>
-                    <a href="#" class="btn btn-primary">Add to Cart</a>
-                </div>
-
-            </div>
-                
-        
-        </div>
-    </div>
-    <!--Image-add to cart button-->
+</body>
+</html>
     {% endblock content %}
