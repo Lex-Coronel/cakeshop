@@ -2,14 +2,16 @@ import imp
 from django.db import models
 from django.contrib.auth.models import User
 from numpy import true_divide
+from django.forms import ModelForm
 
 class Customer(models.Model):
-    user = models.OneToOneField(User, on_delete = models.CASCADE,null=True, blank=True)
-    name = models.CharField(max_length=200, null=True)
+    username = models.CharField(max_length=200, null=True)
     email = models.CharField(max_length=200, null=True)
+    password = models.CharField(max_length=200, null=True)
+
 
     def __str__(self):
-        return self.name
+        return self.username
 
 class Product(models.Model):
     name = models.CharField(max_length=200)

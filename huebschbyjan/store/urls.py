@@ -3,11 +3,14 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name="home"),
-    path('login/', views.login, name="login"),
+    path('index/', views.index, name="index"),
+    path('login/', views.userlogin, name="login"),
+    path('logout/', views.logoutuser, name="logout"),
     path('register/', views.register, name="register"),
     path('payment/', views.payment, name="payment"),
     path('item/', views.item, name="item"),
     path('contactus/', views.contact, name="contact-us"),
+    path('contactus/', views.contact_in, name="contact-us-in"),
     path('cart/', views.cart, name="cartpage"),
     path('menu/', views.menu, name="menupage"),
 ]
