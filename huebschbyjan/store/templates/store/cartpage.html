@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Cart Page</title>
-        <link rel="stylesheet" href="cartpage.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        
-   
-    </head>
+{% extends 'store/navbar-in.html' %} 
+{% load static %}
+{% block content %}
+
     <body>
     <!---Hero Section-->
        <section id="hero">
@@ -16,24 +11,6 @@
 
     </section>
     <!---End of Hero Section-->
-    <!--Nav-->
-    <ul class="nav justify-content-center">
-        <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="#">Login</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="#">Register</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link disabled">Menu</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link disabled">Contact Us</a>
-        </li>
-    </ul>
 
         <!--End of Nav-->
 
@@ -116,5 +93,4 @@
             </div>
          </div>
         </div>
-</body>
-</html>
+{% endblock content %}
