@@ -4,7 +4,7 @@ from urllib import request
 from django.shortcuts import redirect, render
 from .models import *
 from django.contrib import messages
-from .forms import CreateUserForm
+from .forms import CreateUserForm, PaymentForm
 from django.contrib.auth import authenticate, login, logout 
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -39,17 +39,28 @@ def register(request):
         form = CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
-            user = form.cleaned_data.get('username')
-            messages.success(request, "Account was successfully created for " + user)
-            return redirect('userlogin')
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password1']
+            user = authenticate(request, username=username, password=password)
+            return redirect('index')
 
     context = {'form': form}
     return render(request,'store/register.html', context)
 
 @login_required(login_url='login')
 def payment(request):
-    context = {}
-    return render(request,'store/payment.html')
+    customer = request.user.customer
+    order, created = Order.objects.get_or_create(customer=customer, complete=False)
+    items = order.orderitem_set.all()
+    form = PaymentForm()
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+
+
+    context = {'items':items, 'order':order, 'form':form}
+    return render(request,'store/payment.html', context)
 
 @login_required(login_url='login')
 def item(request):
@@ -68,14 +79,18 @@ def contact_in(request):
 
 @login_required(login_url='login')
 def cart(request):
-    context = {}
-    return render(request,'store/cartpage.html')
+    customer = request.user.customer
+    order, created = Order.objects.get_or_create(customer=customer, complete=False)
+    items = order.orderitem_set.all()
+
+    context = {'items':items, 'order':order}
+    return render(request,'store/cartpage.html', context)
 
 @login_required(login_url='login')
 def menu(request):
     products = Product.objects.all()
     context = {'products':products}
-    return render(request,'store/menupage.html')
+    return render(request,'store/menupage.html', context)
 
 def logoutuser(request):
     logout(request)
