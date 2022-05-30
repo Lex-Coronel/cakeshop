@@ -8,13 +8,13 @@
 <section class="py-5">
     <div class="container px-4 px-lg-5 my-5">
         <div class="row gx-4 gx-lg-5 align-items-center">
-            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" style="height: 600px" src="../../../static/images/mdcake.png" alt="..." /></div>
+            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" style="height: 600px" src="{{product_id.imageURL}}" alt="..." /></div>
             <div class="col-md-6">
-                <div class="small mb-1 fst-italic">Mother's Day Special</div>
-                <h1 class="display-5 fw-bolder">Red Velvet Cake</h1>
+                <div class="small mb-1 fst-italic">Huebsch by Jan Cake</div>
+                <h1 class="display-5 fw-bolder">{{product_id.name}}</h1>
                 <div class="fs-5 mb-5">
-                    <p class="lead">Red velvet cake with cream cheese frosting.</p>
-                    <span class="price">₱330.00</span>
+                    <p class="lead">{{product_id.description}}</p>
+                    <span class="price">₱{{product_id.price}}</span>
                 </div>
                 <!-- Dedication Form -->
                 <div>
@@ -22,21 +22,76 @@
                 <div>
                 <form id="dedicationForm">
                   <div class="form-floating mb-3">
-                    <input class="form-control" id="dedication" type="text" placeholder="Dedication"/>
+                    <input name = "dedication" class="form-control" id="dedication" type="text" placeholder="Dedication"/>
                     <label for="dedication">Enter your dedication here</label>
                   </div>
-                </form>
+                
                 <br>
                 <div class="d-flex">
-                    <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
-                    <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                    <input name="quantity" class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
+                  </form>
+                    <button data-product={{product_id.pk}} data-action = "create" class="update-cart btn btn-outline-dark flex-shrink-0" type="button">
                         <i class="bi-cart-fill me-1"></i>
                         Add to cart
                     </button>
+                  
                 </div>
             </div>
         </div>
     </div>
   </section>
+
+  <script>
+    var updateBtns = document.getElementsByClassName('update-cart')
+
+    for(i=0; i<updateBtns.length; i++){
+        updateBtns[i].addEventListener('click',function(){
+            var productId = this.dataset.product
+            var action = this.dataset.action
+            console.log('productId:', productId, 'Action:', action)
+    
+           console.log('USER:',user)
+           if(user === 'AnonymousUser'){
+               console.log('Not logged in')
+           } else{
+               addtocartForm(productId, action)
+           }
+        })
+    }
+    
+    function addtocartForm(productId, action){
+        console.log('Add to cart form clicked')
+    
+        var addtocart = {
+            'dedication':null,
+            'quantity':null,
+        }
+    
+        addtocart.dedication = dedicationForm.dedication.value
+        addtocart.quantity = dedicationForm.quantity.value
+    
+        console.log('addtocart', addtocart)
+    
+        var url = "/addtocart/"
+        fetch(url, {
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json',
+                'X-CSRFToken':csrftoken,
+            },
+            body:JSON.stringify({'dedicationForm':addtocart, 'productId': productId, 'action':action}),
+        })
+        .then((response) => response.json())
+        .then((data) => {
+              console. log('Success:',data);
+              alert('Item added to Cart');
+    
+              window.location.href = "{% url 'cartpage' %}"
+              
+        })
+    
+      }
+
+  </script>
 
 {% endblock content %}

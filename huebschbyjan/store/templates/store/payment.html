@@ -9,29 +9,36 @@
   <br><br><br>
     <div class="row">
       <!-- Buyer Info -->
+      
         <div class="col-md-6">
+          <form id="paymentForm">
             <h5 class="mb-3"><i class="fa fa-location-arrow"></i> Delivery Address</h5>
                 <div class="form-floating mb-3">
-                    <input class="form-control" id="address" type="text" placeholder="Address"/>
+                    <input name="address" class="form-control" id="address" type="text" placeholder="Address"/>
                     <label for="address" style="color: gray">Enter Address Here</label>
                 </div>
             <br>
             <h5 class="mb-3"><i class="fa fa-phone"></i> Contact Number</h5>
                 <div class="form-floating mb-3">
-                    <input class="form-control" id="contact" type="text" placeholder="Number" required/>
+                    <input name="number" class="form-control" id="contact" type="text" placeholder="Number" required/>
                     <label for="contact" style="color: gray">Enter Contact Number Here</label>
                 </div>
+              
             <hr>
                 <div class="d-flex flex-column"> 
                   <h5 class="mb-3"><i class="fa fa-location-arrow"></i> Payment Method</h5>
-                  <label class="radio"> <input type="radio" hidden name="paymethod" value="gcash" checked>
+                  <label class="radio"> <input name="method" type="radio" hidden name="paymethod" value="GCASH" checked>
                         <div class="d-flex justify-content-between"> G-CASH</div>
                   </label>
-                  <label class="radio"> <input type="radio" hidden name="paymethod" value="cod">
-                        <div class="d-flex justify-content-between"> CASH ON DELIVERY</div>
+                  <label class="radio"> <input name="method" type="radio" hidden name="paymethod" value="COD">
+                        <div class="d-flex justify-content-between"> COD</div>
                   </label>
                 </div>
+                <br>
+                <br></form>
+                <div class="buttons"> <button class="payme btn btn-success btn-block col-md-12">Confirm</button> </div>
         </div>
+      
         <div class="col-md-2"> </div>
 
         <!-- Order Summary -->
@@ -39,19 +46,74 @@
             <div class="bg-pay p-3"> 
               <span class="fw-bold justify-content-between"><i class="fa fa-file-text"></i> Order Summary</span>
               <br><br>
-                <div class="d-flex justify-content-between mt-2"> <span class="fw-500"> Product 1</span> <span>₱599.00</span> </div>
-                <div class="d-flex justify-content-between mt-2"> <span class="fw-500"> Product 2</span> <span>₱599.00</span> </div>
+                {% for item in items %}
+                <div class="d-flex justify-content-between mt-2"> <span class="fw-500"> {{item.product.name}}</span> <span>₱{{item.product.price}}</span> </div>
+                {% endfor %}
                 <br>
                 <hr>
-                <div class="d-flex justify-content-between mt-2"> <span class="fw-bold">Subtotal: </span> <span>₱1198.00</span> </div>
+                <div class="d-flex justify-content-between mt-2"> <span class="fw-bold">Subtotal: </span> <span>₱{{order.get_cart_subtotal}}</span> </div>
                 <div class="d-flex justify-content-between mt-2"> <span class="fw-bold">Delivery Fee: </span> <span>₱60.00</span> </div>
                 <hr>
-                <div class="d-flex justify-content-between mt-2"> <span class="fw-bold">Total </span> <span class="text-success">₱1258.00</span> </div>
-            </div>
+                <div class="d-flex justify-content-between mt-2"> <span class="fw-bold">Total </span> <span class="text-success">₱{{order.get_cart_total}}</span> </div>
+              </div>
             <br>
-            <div class="buttons"> <button class="btn btn-success btn-block col-md-12">Proceed to payment</button> </div>
+            
         </div>
     </div>
 </div>
+<script>
+  var payment_btn = document.getElementsByClassName('payme')
+
+    for(i=0; i<payment_btn.length; i++){
+      payment_btn[i].addEventListener('click',function(){
+            var productId = this.dataset.product
+            var action = this.dataset.action
+            console.log('productId:', productId, 'Action:', action)
+    
+           console.log('USER:',user)
+           if(user === 'AnonymousUser'){
+               console.log('Not logged in')
+           } else{
+              submitFormData(productId, action)
+           }
+        })
+    }
+
+  var total = "{{order.get_cart_total}}" 
+
+  function submitFormData(productId, action){
+    console.log('Payment button has been clicked!')
+
+    var delivery = {
+        'address':null,
+        'number':null,
+        'method':null,
+
+        
+    }
+    delivery.address = paymentForm.address.value
+    delivery.number = paymentForm.number.value
+    //delivery.method = paymentForm.method.value
+
+    var url = '/delivering/'
+    fetch(url,{
+        method:'POST',
+        headers:{
+          'Content-Type':'application/json',
+          'X-CSRFToken':csrftoken,
+        },
+        body:JSON.stringify({'paymentForm': delivery, 'productId': productId, 'action':action, 'total':total})
+    })
+    .then((response) => response.json())
+    .then((data) => {
+          console. log('Success:',data);
+          alert('Order paid successfully');
+
+          window.location.href = "{% url 'index' %}"
+        })
+  }
+
+
+</script>
 
 {% endblock content %}
