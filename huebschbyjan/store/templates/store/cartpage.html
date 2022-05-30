@@ -45,7 +45,7 @@
                   <td class="border-0 align-middle">
                        <input type="number" class="form-control text-center" style="width: 80px;" value="{{item.quantity}}">
                   </td>
-                  <td class="border-0 align-middle"><a href="#" style="color: #dab88b"><i class="fa fa-trash"></i></a></td>
+                  <td class="border-0 align-middle"><a href="{% url 'deleteItem' item.id %}" style="color: #dab88b"><i class="fa fa-trash"></i></a></td>
                 </tr>
                 <!-- Cart Item End -->
                 {% endfor %}
@@ -67,7 +67,7 @@
               <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
                 <h5 class="fw-bold">₱{{order.get_cart_total}}</h5>
               </li>
-            </ul><a href="{% url 'payment' %}" class="btn btn-dark py-3 btn-block p-5">Procceed to checkout</a>
+            </ul><a href="{% url 'payment' %}" class="btn btn-dark py-3 btn-block p-5">Proceed to checkout</a>
           </div>
       </div>
 
@@ -75,6 +75,5 @@
   </div>
 </div>
 
-</body>
-</html>
+
 {% endblock content %}

@@ -1,0 +1,21 @@
+{% extends 'store/navbar-in.html' %} 
+{% load static %}
+{% block content %}
+  <br>
+  <form method = "POST" action ="">
+    {% csrf_token %}
+  <div class="collectcontainer text-center py-5 mb-4">
+    <h1 class="collecthead fw-light text-uppercase">Do you want to delete {{order.product}}?</h1>
+  </div>
+
+  <button class="btn btn-outline-dark flex-shrink-0" type="button">
+    <input type="submit" name="delete">
+  </button>
+  <button href="{% url 'cartpage' %}" class="btn btn-outline-dark flex-shrink-0" type="button">
+    <a class="nav-link text-uppercase" href="{% url 'cartpage' %}">Cancel</a>
+    
+  </button>
+</form>
+
+  
+{% endblock %}

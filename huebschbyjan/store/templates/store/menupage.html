@@ -10,12 +10,15 @@
     <div class="col-md-8">
     </div>
     <div class="col-md-4">
+    <form method="get">
     <div class="input-group" style="padding-left: 10px">
-      <input type="text" class="form-control input-text" placeholder="Search products">
+      
+      {{cakeFilter.form}}
       <div class="input-group-append">
-      <button class="btn btn-outline-warning btn-lg" type="button"><i class="fa fa-search"></i></button>
+      <button class="btn btn-outline-warning btn-lg" type="submit"><i class="fa fa-search"></i></button>
       </div>
     </div>  
+    </form>
   </div>        
   </div>
 </div>
@@ -38,7 +41,7 @@
               class="w-100" />
           </div>
           <div class="card-body">
-            <a href="#" class="text-reset">
+            <a href="{% url 'item' product.id %}" class="text-reset">
               <h5 class="card-title mb-3">{{product.name}}</h5>
             </a>
             <h6 class="mb-3">₱{{product.price|floatformat:2}}</h6>

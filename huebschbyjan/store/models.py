@@ -43,7 +43,13 @@ class Order(models.Model):
         orderitems = self.orderitem_set.all()
         total = sum([item.get_total for item in orderitems])
         return total
-    
+        
+    @property
+    def get_cart_items(self):
+        orderitems = self.orderitem_set.all()
+        total = sum([item.quantity for item in orderitems])
+        return total
+
     @property
     def get_cart_total(self):
         orderitems = self.orderitem_set.all()
@@ -80,3 +86,10 @@ class Shipping(models.Model):
     def __str__(self):
         return self.address
 
+class ContactUs(models.Model):
+    name = models.CharField(max_length=200, null=True)
+    email = models.CharField(max_length=200, null=True)
+    message = models.CharField(max_length=10000, null=True)
+
+    def __str__(self):
+        return self.email

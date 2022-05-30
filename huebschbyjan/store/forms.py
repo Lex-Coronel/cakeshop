@@ -1,7 +1,7 @@
 from email.policy import default
 from typing import Text
-from django.forms import ModelForm, TextInput, ChoiceField
-from .models import Customer, Shipping
+from django.forms import ModelForm, TextInput, ChoiceField, Textarea
+from .models import Customer, Shipping, ContactUs
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
@@ -76,4 +76,36 @@ class PaymentForm(ModelForm):
         model = Shipping
         fields = ['address', 'contact', 'payment_method']
     
+class ContactUsForm(ModelForm):
+    name = forms.CharField(max_length=200, required=True,
+            widget=forms.TextInput(attrs={
+                'type': "text",
+                'class': "form-control",
+                'id':"name",
+                'placeholder':"Name",
+            })
+        )
+
+    email = forms.CharField(max_length=200, required=True,
+            widget=forms.TextInput(attrs={
+                'type': "email",
+                'class': "form-control",
+                'id':"emailAddress",
+                'placeholder':"Email Address",
+            })
+        )   
+
+    message = forms.CharField(max_length=10000, required=True,
+            widget=forms.Textarea(attrs={
+                'type': "text",
+                'class': "form-control",
+                'id':"message",
+                'placeholder':"Message",
+                'style':"height: 10rem;"
+            })
+        )  
+
+    class Meta:
+        model = ContactUs
+        fields = ['name', 'email', 'message']
 
